@@ -1,0 +1,18 @@
+﻿<Window x:Class="Jojo.WPF.Skeleton.ApplicationView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Views="clr-namespace:Jojo.WPF.Skeleton.Views"
+        Title="MainWindow" Height="350" Width="525">
+
+    <Window.Resources>
+        <!-- Fenêtre principale -->
+        <DataTemplate DataType="{x:Type Views:HomeViewModel}">
+            <Views:HomeView />
+        </DataTemplate>
+    </Window.Resources>
+
+    <Grid Name="ApplicationMainGrid">
+        <!-- Affichage du UserControl sélectionné -->
+        <ContentControl Content="{Binding Path=CurrentPageViewModel}" />
+    </Grid>
+</Window>
