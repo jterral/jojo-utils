@@ -31,7 +31,7 @@ namespace Jojo.WPF.Converters
         /// <param name="targetType">Le type de l'objet.</param>
         /// <param name="parameter">Le paramètre.</param>
         /// <param name="culture">La culture.</param>
-        /// <returns>Retourne un un <c>DependencyProperty.UnsetValue</c>.</returns>
+        /// <returns>Retourne un <c>DependencyProperty.UnsetValue</c>.</returns>
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             // Aucune conversion inverse possible
