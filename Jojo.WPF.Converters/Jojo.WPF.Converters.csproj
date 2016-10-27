@@ -44,6 +44,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BoolToVisibilityConverter.cs" />
+    <Compile Include="EnumToBoolConverter.cs" />
+    <Compile Include="InvertBoolConverter.cs" />
     <Compile Include="NullToFalseConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
