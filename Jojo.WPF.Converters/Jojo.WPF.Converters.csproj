@@ -43,6 +43,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArithmeticConverter.cs" />
     <Compile Include="BoolToVisibilityConverter.cs" />
     <Compile Include="EnumToBoolConverter.cs" />
     <Compile Include="InvertBoolConverter.cs" />
