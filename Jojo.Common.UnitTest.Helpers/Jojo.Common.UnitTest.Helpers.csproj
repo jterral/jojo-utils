@@ -54,6 +54,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitTestConfig.cs" />
     <Compile Include="UnitTestException.cs" />
+    <Compile Include="UnitTestSwitch.cs" />
     <Compile Include="UnitTestXML.cs" />
   </ItemGroup>
   <ItemGroup>
