@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Linq;
 using System.Reflection;
 
 namespace Jojo.Common.Extensions.System
@@ -13,13 +14,24 @@ namespace Jojo.Common.Extensions.System
         /// Obtient la description de l'énumération.
         /// </summary>
         /// <typeparam name="T">Le type de l'énumération.</typeparam>
-        /// <param name="value">L'énumération pour laquelle récupérer sa description.</param>
-        /// <returns>La description de l'énumération si celle-ci existe, sinon l'énumération sous forme de <see cref="string" />.</returns>
-        public static string GetDescription<T>(this Enum value)
+        /// <param name="enumValue">L'énumération pour laquelle récupérer sa description.</param>
+        /// <returns>Retourne la description de l'énumération si celle-ci existe, sinon l'énumération sous forme de <see cref="string" />.</returns>
+        public static string GetDescription<T>(this Enum enumValue)
         {
-            FieldInfo field = value.GetType().GetField(value.ToString());
+            FieldInfo field = enumValue.GetType().GetField(enumValue.ToString());
             DescriptionAttribute attribute = Attribute.GetCustomAttribute(field, typeof(DescriptionAttribute)) as DescriptionAttribute;
-            return attribute == null ? value.ToString() : attribute.Description;
+            return attribute == null ? enumValue.ToString() : attribute.Description;
+        }
+
+        /// <summary>
+        /// Obtient l'attribut personnalisé d'une énumération.
+        /// </summary>
+        /// <typeparam name="TAttribute">Le type de l'attribut à récupérer.</typeparam>
+        /// <param name="enumValue">L'énumération pour laquelle récupérer l'attribut.</param>
+        /// <returns>Retourne l'attribut retrouvé sur l'énumération.</returns>
+        public static TAttribute GetAttribute<TAttribute>(this Enum enumValue) where TAttribute : Attribute
+        {
+            return enumValue.GetType().GetMember(enumValue.ToString()).First().GetCustomAttribute<TAttribute>();
         }
     }
 }
