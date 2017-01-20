@@ -11,7 +11,7 @@ namespace Jojo.Common.Helpers.Event
         /// <summary>
         /// Le paramètre à passer.
         /// </summary>
-        private T _value;
+        private readonly T _value;
 
         /// <summary>
         /// Obtient le paramètre passé.
